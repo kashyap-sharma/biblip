@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="app.biblipad.actArea.Sign">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:padding="45dp"
+        android:id="@+id/imageview"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_b9"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/imageview"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:id="@+id/text"
+        android:layout_marginTop="-50dp"
+        android:textStyle="bold"
+        android:text="We are lucky to have you on board"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="45dp"
+        android:textSize="18sp"
+        android:id="@+id/facebooklog"
+        android:layout_marginLeft="25dp"
+        android:text="Sign In With Facebook"
+        android:textAllCaps="false"
+        android:textColor="#828282"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/rect_d73"/>
+    <com.facebook.login.widget.LoginButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/loginButton" />
+
+
+</RelativeLayout>

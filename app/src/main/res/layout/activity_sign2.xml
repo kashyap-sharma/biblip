@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="app.biblipad.actArea.Sign">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:padding="45dp"
+        android:layout_marginTop="-55dp"
+        android:id="@+id/imageview"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_b9"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/imageview"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:id="@+id/text"
+        android:layout_marginTop="-50dp"
+        android:textStyle="bold"
+        android:text="Complete your profile for a better experience."
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="45dp"
+        android:textSize="18sp"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:id="@+id/username"
+        android:layout_marginLeft="25dp"
+        android:paddingLeft="10dp"
+        android:hint="Username"
+        android:textAllCaps="false"
+        android:textColor="#828282"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/rect_d73"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+
+        android:id="@+id/blogname"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:layout_marginLeft="25dp"
+        android:paddingLeft="10dp"
+        android:hint="Blog Name"
+        android:padding="8dp"
+        android:textAllCaps="false"
+        android:textColor="#828282"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/rect_d73"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/blogname"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:padding="8dp"
+        android:id="@+id/blogurl"
+        android:layout_marginLeft="25dp"
+        android:paddingLeft="10dp"
+        android:hint="Blog URL (eg. http://xyz.com)"
+        android:textAllCaps="false"
+        android:textColor="#828282"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/rect_d73"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:layout_below="@+id/blogurl"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:textSize="18sp"
+        android:id="@+id/writesabt"
+        android:layout_marginLeft="25dp"
+        android:paddingLeft="10dp"
+        android:hint="Writes about(eg. tech)"
+        android:textAllCaps="false"
+        android:textColor="#828282"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/rect_d73"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/writesabt"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:id="@+id/join"
+        android:layout_marginLeft="25dp"
+        android:text="Join"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/rect_d73"/>
+
+
+
+
+</RelativeLayout>
+

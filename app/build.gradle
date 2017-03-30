@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+    useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "app.biblipad"
         minSdkVersion 15
@@ -26,5 +27,9 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    compile 'com.android.support:design:25.3.0'
+    compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+    compile 'com.facebook.android:facebook-android-sdk:4.20.0'
+    compile 'com.github.jineshfrancs:EasyPermission:2.0.2'
     testCompile 'junit:junit:4.12'
 }

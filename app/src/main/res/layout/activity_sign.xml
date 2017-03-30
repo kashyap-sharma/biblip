@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="app.biblipad.actArea.Sign">
+
+    <include android:id="@+id/_login"
+        layout="@layout/activity_signnn"/>
+    <include android:id="@+id/_signup"
+        layout="@layout/activity_signn"/>
+
+
+</android.support.design.widget.CoordinatorLayout>

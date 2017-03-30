@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Biblipad</string>
+    <string name="facebook_app_id">1350896691638468</string>
+    <string name="fb_login_protocol_scheme">fb1350896691638468</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="permission_not_granted">Unable to perform selected action because permissions were not granted.</string>
+    <string name="ok">OK</string>
+    <string name="fds">A unique clutter-free community for writers.</string>
 </resources>
