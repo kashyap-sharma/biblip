@@ -47,7 +47,7 @@ public class JSONfunctions {
 
             HttpPost request = new HttpPost(url);
             StringEntity paramss =new StringEntity(params.toString());
-            request.addHeader("content-type", "application/x-www-form-urlencoded");
+            request.addHeader("content-type", "application/json");
             request.setEntity(paramss);
             HttpResponse response = httpClient.execute(request);
 

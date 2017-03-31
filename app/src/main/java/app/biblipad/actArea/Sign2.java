@@ -145,9 +145,7 @@ public class Sign2 extends AppCompatActivity implements View.OnClickListener {
             JSONArray jsonArray=new JSONArray();
             String chip[] =writesabt.getText().toString().trim().split(" ");
             for(int i=0;i<chip.length;i++){
-                JSONObject jsonObject1=new JSONObject();
-                jsonObject1.put("text",chip[i].toString());
-                jsonArray.put(jsonObject1);
+                jsonArray.put(chip[i].toString());
             }
             jsonObject.put("blogCategories",jsonArray);
         } catch (JSONException e) {
