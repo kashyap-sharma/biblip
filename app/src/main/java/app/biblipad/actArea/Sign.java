@@ -40,7 +40,7 @@ import app.biblipad.functions.Static_Catelog;
 
 public class Sign extends AppCompatActivity implements View.OnClickListener {
 
-    private Button facebookb,jointheclub,browse;
+    private Button facebookb,googlelog,jointheclub,browse;
     private LoginButton loginButton;
     Context context;
     TextView logins;
@@ -68,6 +68,7 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
         constraint_signup.setVisibility(View.GONE);
         callbackManager = CallbackManager.Factory.create();
         facebookb = (Button) findViewById(R.id.facebooklog);
+        googlelog = (Button) findViewById(R.id.googlelog);
         jointheclub = (Button) findViewById(R.id.jointheclub);
         browse = (Button) findViewById(R.id.browse);
         logins = (TextView) findViewById(R.id.logins);
@@ -75,6 +76,7 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
         loginButton.setReadPermissions(Arrays.asList("email", "user_photos", "public_profile", "user_friends"));
 
         facebookb.setOnClickListener(this);
+        googlelog.setOnClickListener(this);
         loginButton.setOnClickListener(this);
         jointheclub.setOnClickListener(this);
         browse.setOnClickListener(this);
@@ -151,6 +153,9 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
             case R.id.facebooklog:
                 loginButton.performClick();
                 break;
+            case R.id.googlelog:
+                signinGoogle();
+                break;
             case R.id.jointheclub:
                 constraint_signup_page.setVisibility(View.GONE);
                 constraint_signup.setVisibility(View.VISIBLE);
@@ -166,6 +171,10 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+    private void signinGoogle() {
+
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode,Intent data) {
@@ -177,7 +186,7 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
     private void SendFbData() {
 
         StringRequest jsonObjRequest = new StringRequest(Request.Method.POST,
-                "http://biblipad.com/auth/signup",
+                "http://biblipad.com/auth/fbLogin",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -188,6 +197,7 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
                             if(respo.getBoolean("success")){
                                 Log.e("Response",""+response.toString());
                                 Static_Catelog.setStringProperty(context,"email",email);
+                                Static_Catelog.setStringProperty(context,"token",respo.getString("token"));
                                 String m="m";
                                 try {
                                     m=respo.getString("case");
@@ -233,11 +243,9 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
                 params.put("email",email);
                 params.put("created_date", "");
                 params.put("fb_handle", fb_handle);
+                params.put("gplus_handle", "");
                 params.put("photo", photo);
-                JSONArray jsonArray=new JSONArray();
-                params.put("followed_by",jsonArray.toString());
-                params.put("following",jsonArray.toString());
-                params.put("messages",jsonArray.toString());
+
 
                 return params;
             }

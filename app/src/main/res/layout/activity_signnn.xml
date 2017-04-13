@@ -36,6 +36,19 @@
         android:textColor="#828282"
         android:layout_marginRight="25dp"
         android:background="@drawable/rect_d73"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/facebooklog"
+        android:layout_marginTop="25dp"
+        android:textSize="18sp"
+        android:id="@+id/googlelog"
+        android:layout_marginLeft="25dp"
+        android:text="Sign In With Google"
+        android:textAllCaps="false"
+        android:textColor="#828282"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/rect_d73"/>
     <com.facebook.login.widget.LoginButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

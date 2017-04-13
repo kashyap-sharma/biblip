@@ -23,6 +23,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,12 +40,18 @@ import app.biblipad.functions.Static_Catelog;
 public class Sign2 extends AppCompatActivity implements View.OnClickListener {
 
     private EditText username;
+    private EditText usernamereader;
     private EditText blogname;
     private EditText blogurl;
     private EditText writesabt;
-    private Button join;
+    private EditText interestedIn;
+    private Button join,joinreader;
+    private RelativeLayout blogger,reader;
+    private RadioButton asblogger,asreader;
+    private RadioGroup radiogrp;
     boolean isTwise = false ;
     boolean isEdit = true ;
+    String as= "b";
     Context context;
     private ProgressDialog pdia;
 
@@ -61,12 +70,47 @@ public class Sign2 extends AppCompatActivity implements View.OnClickListener {
         blogurl = (EditText) findViewById(R.id.blogurl);
         writesabt = (EditText) findViewById(R.id.writesabt);
         join = (Button) findViewById(R.id.join);
+        asreader = (RadioButton) findViewById(R.id.asreader);
+        asblogger = (RadioButton) findViewById(R.id.asblogger);
+        radiogrp = (RadioGroup) findViewById(R.id.radiogrp);
 
         join.setOnClickListener(this);
+
+        radiogrp.check(asblogger.getId());
         double scaletype =getResources().getDisplayMetrics().density;
         if(scaletype >=3.0){
             isTwise = true ;
         }
+
+       radiogrp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                View radioButton = radiogrp.findViewById(checkedId);
+                int index = radiogrp.indexOfChild(radioButton);
+
+                // Add logic here
+
+                switch (index) {
+                    case 0: // first button
+                        as ="b";
+                        writesabt.setHint("Writes about (eg. tech, poetry)");
+                        blogname.setVisibility(View.VISIBLE);
+                        blogurl.setVisibility(View.VISIBLE);
+
+                        break;
+                    case 1: // secondbutton
+                        as="r";
+                        writesabt.setHint("Interested in (eg. tech, poetry)");
+                        blogname.setVisibility(View.GONE);
+                        blogurl.setVisibility(View.GONE);
+
+                        break;
+                }
+            }
+        });
+
         writesabt.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -97,6 +141,7 @@ public class Sign2 extends AppCompatActivity implements View.OnClickListener {
                 }
             }
         });
+
     }
 
     @Override
@@ -105,6 +150,7 @@ public class Sign2 extends AppCompatActivity implements View.OnClickListener {
             case R.id.join:
                 submit();
                 break;
+
         }
     }
 
@@ -139,9 +185,15 @@ public class Sign2 extends AppCompatActivity implements View.OnClickListener {
         JSONObject jsonObject=new JSONObject();
         try {
             jsonObject.put("username",usernameString);
-            jsonObject.put("blogUrl",blogurlString);
-            jsonObject.put("blogName",blognameString);
-            jsonObject.put("email", Static_Catelog.getStringProperty(context,"email"));
+            if (as.equalsIgnoreCase("b")) {
+                jsonObject.put("blogUrl",blogurlString);
+                jsonObject.put("blogName",blognameString);
+                jsonObject.put("usertype","blogger");
+            }else{
+                jsonObject.put("usertype","reader");
+            }
+
+            jsonObject.put("token", Static_Catelog.getStringProperty(context,"token"));
             JSONArray jsonArray=new JSONArray();
             String chip[] =writesabt.getText().toString().trim().split(" ");
             for(int i=0;i<chip.length;i++){
@@ -247,6 +299,7 @@ public class Sign2 extends AppCompatActivity implements View.OnClickListener {
         }
 
     }
+
     public  int convertDpToPixel(float dp){
         Resources resources = getApplicationContext().getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
