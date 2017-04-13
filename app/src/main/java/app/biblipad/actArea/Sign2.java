@@ -216,7 +216,7 @@ public class Sign2 extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-
+//
     private class SignTwo extends AsyncTask<String,Void,Void>
     {
         JSONObject object;
