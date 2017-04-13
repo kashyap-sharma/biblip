@@ -162,21 +162,29 @@ public class Sign2 extends AppCompatActivity implements View.OnClickListener {
             return;
         }
 
-        String blognameString = blogname.getText().toString().trim();
-        if (TextUtils.isEmpty(blognameString)) {
-            Toast.makeText(this, "Blog Name", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        String blognameString = null;
+        String blogurlString = null;
+        if (as.equalsIgnoreCase("b")) {
+            blognameString = blogname.getText().toString().trim();
+            if (TextUtils.isEmpty(blognameString)) {
+                Toast.makeText(this, "Blog Name", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-        String blogurlString = blogurl.getText().toString().trim();
-        if (TextUtils.isEmpty(blogurlString)) {
-            Toast.makeText(this, "Blog URL (eg. http://xyz.com)", Toast.LENGTH_SHORT).show();
-            return;
+            blogurlString = blogurl.getText().toString().trim();
+            if (TextUtils.isEmpty(blogurlString)) {
+                Toast.makeText(this, "Blog URL (eg. http://xyz.com)", Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
 
         String writesabtString = writesabt.getText().toString().trim();
         if (TextUtils.isEmpty(writesabtString)) {
-            Toast.makeText(this, "Writes about(eg. tech)", Toast.LENGTH_SHORT).show();
+            if (as.equalsIgnoreCase("b")) {
+                Toast.makeText(this, "Writes about(eg. tech, poetry)", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Interested in(eg. tech, poetry)", Toast.LENGTH_SHORT).show();
+            }
             return;
         }
         Log.e("hanji",writesabtString);
