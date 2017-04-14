@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+
+<android.support.v7.widget.CardView
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true"
+    android:layout_marginRight="5dp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+       <app.biblipad.cusCompo.RoundedImageView
+           android:layout_width="80dp"
+           android:layout_height="80dp"
+           android:id="@+id/pic"
+           android:layout_margin="10dp"
+           android:src="@drawable/hah"
+
+           />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nikita Sailesh"
+            android:textSize="15sp"
+            android:id="@+id/user_name"
+            android:padding="3dp"
+            android:textAllCaps="true"
+            android:layout_toRightOf="@+id/pic"
+            android:layout_marginTop="15dp"
+            android:textColor="#AAAAAA"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IforInspired"
+            android:textSize="12sp"
+            android:paddingLeft="3dp"
+            android:layout_below="@+id/user_name"
+            android:textAllCaps="false"
+            android:layout_toRightOf="@+id/pic"
+            android:textColor="#077D96"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:background="@drawable/backy"
+            android:text="productivity"
+            android:padding="5dp"
+            android:id="@+id/one"
+            android:textSize="11sp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/pic"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:background="@drawable/backy"
+            android:text="productivity"
+            android:padding="5dp"
+            android:textSize="11sp"
+            android:layout_toRightOf="@+id/one"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/pic"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="16sp"
+            android:layout_below="@+id/one"
+            android:padding="10dp"
+            android:text="A dreamer, music-lover and nearly-there writer."
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_marginTop="-3dp"
+            android:src="@drawable/bookmarked"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+    </LinearLayout>
