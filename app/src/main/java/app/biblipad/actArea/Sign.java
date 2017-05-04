@@ -111,7 +111,7 @@ public class Sign extends FragmentActivity implements GoogleApiClient.OnConnecti
         facebookb = (Button) findViewById(R.id.facebooklog);
         googlelog = (Button) findViewById(R.id.googlelog);
         jointheclub = (Button) findViewById(R.id.jointheclub);
-        browse = (Button) findViewById(R.id.browse);
+
         logins = (TextView) findViewById(R.id.logins);
         loginButton = (LoginButton) findViewById(R.id.loginButton);
         loginButton.setReadPermissions(Arrays.asList("email", "user_photos", "public_profile", "user_friends"));
@@ -120,7 +120,6 @@ public class Sign extends FragmentActivity implements GoogleApiClient.OnConnecti
         googlelog.setOnClickListener(this);
         loginButton.setOnClickListener(this);
         jointheclub.setOnClickListener(this);
-        browse.setOnClickListener(this);
         logins.setOnClickListener(this);
 
 
@@ -220,10 +219,7 @@ public class Sign extends FragmentActivity implements GoogleApiClient.OnConnecti
                 constraint_signup_page.setVisibility(View.GONE);
                 constraint_signup.setVisibility(View.VISIBLE);
                 break;
-            case R.id.browse:
-                Intent intent=new Intent(this,Home.class);
-                startActivity(intent);
-                break;
+
         }
     }
 

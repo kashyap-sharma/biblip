@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "493563582968",
+    "project_id": "firebase-biblipad"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493563582968:android:7a6cb13e73511614",
+        "android_client_info": {
+          "package_name": "app.biblipad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493563582968-i279ghbnq7k9h1nhp8l0jv0lc1tsbskj.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "493563582968-95t929gj4r8go6pqvepgu8c8pbt6dbo3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.biblipad",
+            "certificate_hash": "a6f7913f1d292b5941e7e15b21750e21fb416da0"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD13gPYXxTiph7yc6E5q0PsxP0B7JodEvQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
