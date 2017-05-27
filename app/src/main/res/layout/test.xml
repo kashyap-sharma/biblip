@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ImageView
+        android:id="@+id/placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/hah"
+        android:tint="#11000000"
+
+        />
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/bibli_256"
+            android:layout_centerHorizontal="true"
+            app:border_color="@android:color/white"
+            app:border_width="2dp"
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="bottom|center"
+            android:text="Blogger"
+            android:id="@+id/type"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:id="@+id/username"
+            android:layout_below="@+id/type"
+            android:layout_gravity="center_horizontal"
+            android:gravity="bottom|center"
+            android:text="Kashyap Sharma"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Writes about"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:id="@+id/writes"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="tech, art"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:paddingRight="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/writes"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+
+            android:layout_centerInParent="true"
+            android:id="@+id/bar"
+            android:layout_above="@+id/abt"
+            android:textColor="@android:color/white"
+            />
+        <Button
+            android:layout_width="60dp"
+            android:background="#00000000"
+            android:text="Visit"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:layout_marginTop="4dp"
+            android:textColor="#ffffff"
+            android:layout_above="@+id/abt"
+            android:layout_toLeftOf="@+id/bar"
+            android:layout_height="36dp" />
+        <Button
+            android:layout_width="60dp"
+            android:background="#00000000"
+            android:text="follow"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:layout_marginTop="4dp"
+            android:textColor="#ffffff"
+            android:layout_above="@+id/abt"
+            android:layout_toRightOf="@+id/bar"
+            android:layout_height="36dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About me:"
+            android:padding="5dp"
+            android:id="@+id/abt"
+            android:textColor="#f3f3f3"
+            android:textSize="13sp"
+            android:layout_alignParentBottom="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="no about-me added yet."
+            android:padding="5dp"
+            android:textSize="13sp"
+            android:textColor="#f3f3f3"
+            android:layout_toRightOf="@+id/abt"
+            android:id="@+id/about_me"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:background="#565253"
+        app:tabIndicatorColor="@android:color/transparent"
+        app:tabIndicatorHeight="4dp"
+        android:layout_alignParentBottom="true"
+        app:tabPaddingStart="0dp"
+        android:layout_below="@+id/title"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabTextColor="#767779"
+        app:tabSelectedTextColor="#EA315A"
+        />
+    <app.biblipad.cusCompo.CustomViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/tabs"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+</RelativeLayout>

@@ -201,7 +201,7 @@ public class Splash extends AppCompatActivity {
                 if (isInternetAvailable()) {
 
                     if (Static_Catelog.getStringProperty(context,"email")==null) {
-                        myIntent = new Intent(Splash.this, Sign.class);
+                        myIntent = new Intent(Splash.this, Home.class);
                         // startActivity(myIntent);
                         new Handler().postDelayed(new Runnable() {
 
@@ -234,7 +234,7 @@ public class Splash extends AppCompatActivity {
 //                        }, splash_time);
                     }else{
                         if (Static_Catelog.getStringProperty(context,"case")==null) {
-                            myIntent = new Intent(Splash.this, Sign2.class);
+                            myIntent = new Intent(Splash.this, Home.class);
                             new Handler().postDelayed(new Runnable() {
 
                                 @Override

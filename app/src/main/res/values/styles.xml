@@ -38,5 +38,8 @@
         <item name="spinBars">true</item>
         <item name="color">@android:color/black</item>
     </style>
+    <style name="ToolBarWithNavigationBack">
+        <item name="navigationIcon">@drawable/ic_action_clear_black</item>
+    </style>
 
 </resources>

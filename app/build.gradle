@@ -44,6 +44,8 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:4.20.0'
     compile 'com.github.jineshfrancs:EasyPermission:2.0.2'
     testCompile 'junit:junit:4.12'
+    compile 'com.github.crysehillmes:PersistentSearchView:4da778cd90'
+    compile 'de.hdodenhof:circleimageview:1.3.0'
 }
 
 
