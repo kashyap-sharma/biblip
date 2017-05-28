@@ -47,7 +47,7 @@ public class FragmentProfile extends RootFragment {
         // Inflate the layout for this fragment
 
 
-
+//
 
         View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
         tabLayout = (TabLayout) rootView.findViewById(R.id.tabs);
