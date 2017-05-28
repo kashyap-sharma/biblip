@@ -46,22 +46,9 @@
 
             </FrameLayout>
         </android.support.design.widget.CollapsingToolbarLayout>
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="28dp"
-            android:background="#565253"
-            app:tabIndicatorColor="@android:color/transparent"
-            app:tabIndicatorHeight="4dp"
-            android:layout_alignParentBottom="true"
-            app:tabPaddingStart="0dp"
-            app:tabMode="fixed"
-            app:tabGravity="fill"
-            app:tabTextColor="#767779"
-            app:tabSelectedTextColor="#EA315A"
-            app:tabPaddingEnd="0dp" />
+
     </android.support.design.widget.AppBarLayout>
-    <android.support.v4.view.ViewPager
+    <app.biblipad.cusCompo.CustomViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
 
@@ -140,22 +127,21 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
         >
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:background="#565253"
+            app:tabIndicatorColor="@android:color/transparent"
+            app:tabIndicatorHeight="4dp"
+            android:layout_alignParentBottom="true"
+            app:tabPaddingStart="0dp"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabTextColor="#767779"
+            app:tabSelectedTextColor="#EA315A"
+            app:tabPaddingEnd="0dp" />
 
-        <android.support.v7.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:visibility="gone"
-            app:cardElevation="8dp"
-            app:contentPadding="16dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lineSpacingExtra="8dp"
-                android:text=""
-                android:textSize="18sp" />
-        </android.support.v7.widget.CardView>
 
 
     </android.support.v4.widget.NestedScrollView>

@@ -6,6 +6,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.util.SparseArray;
@@ -48,14 +49,19 @@ public class FragmentProfile extends RootFragment {
 
 
 
-        View rootView = inflater.inflate(R.layout.test, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
         tabLayout = (TabLayout) rootView.findViewById(R.id.tabs);
         viewPager = (CustomViewPager) rootView.findViewById(R.id.viewpager);
-     //   viewPager.setPagingEnabled(true);
-
+        viewPager.setPagingEnabled(true);
         setupViewPager(viewPager);
-        tabLayout.setupWithViewPager(viewPager);
-        setupTabIcons();
+        tabLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                tabLayout.setupWithViewPager(viewPager);
+                setupTabIcons();
+            }
+        });
+
 
 
         return rootView;
@@ -80,7 +86,7 @@ public class FragmentProfile extends RootFragment {
     }
 
     private void setupViewPager(CustomViewPager viewPager) {
-        adapter = new ViewPagerAdapter(getFragmentManager());
+        adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new FragmenttPosts(), "Posts");
         adapter.addFragment(new FragmenttFollowing(), "Following");
         adapter.addFragment(new FragmenttFollower(), "Follower");
@@ -88,7 +94,7 @@ public class FragmentProfile extends RootFragment {
     }
 
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
+    class ViewPagerAdapter extends FragmentStatePagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
